@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IT Workshop: Software Requirements</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f3f6f9;
+  --surface: #ffffff;
+  --ink: #14202e;
+  --muted: #5a6b7d;
+  --line: #d5dde6;
+  --accent: #0b6bcb;
+  --accent-soft: #e3f0fd;
+  --ok: #1a7f4b;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1722;
+    --surface: #17212f;
+    --ink: #e6edf5;
+    --muted: #9aabbd;
+    --line: #2a3a4d;
+    --accent: #5aa9f5;
+    --accent-soft: #17304a;
+    --ok: #4cc38a;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 1rem; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1rem/1.6 "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+}
+main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
+h1, h2 { font-family: "IBM Plex Sans Condensed", "Arial Narrow", sans-serif; font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; }
+h1 { font-size: clamp(2rem, 7vw, 3rem); margin: 0 0 .6rem; }
+h2 { font-size: 1.4rem; margin: 2.2rem 0 .8rem; }
+p { margin: 0 0 1rem; max-width: 62ch; }
+.lead { color: var(--muted); font-size: 1.08rem; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .6rem; margin: 1.4rem 0 0; padding: 0; list-style: none; }
+.facts li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: .7rem .9rem; }
+.facts b { display: block; font-size: .8rem; font-weight: 500; color: var(--muted); }
+.progress { position: sticky; top: env(safe-area-inset-top, 0px); background: var(--bg); padding: .7rem 0; z-index: 5; border-bottom: 1px solid var(--line); }
+.bar { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+.bar span { display: block; height: 100%; width: 0; background: var(--ok); transition: width .25s; }
+.progress p { margin: .4rem 0 0; font-size: .9rem; color: var(--muted); }
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: .95rem; }
+th, td { text-align: left; padding: .65rem .8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; background: var(--accent-soft); }
+tr:last-child td { border-bottom: 0; }
+.check { list-style: none; margin: 0; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.check li { border-bottom: 1px solid var(--line); }
+.check li:last-child { border-bottom: 0; }
+.check label { display: flex; gap: .75rem; padding: .8rem .9rem; cursor: pointer; align-items: flex-start; }
+.check input { width: 1.25rem; height: 1.25rem; margin-top: .2rem; accent-color: var(--accent); flex: none; }
+.check input:checked + span { color: var(--muted); text-decoration: line-through; }
+.check small { display: block; color: var(--muted); text-decoration: none; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.help { background: var(--accent-soft); border-radius: 8px; padding: 1rem 1.1rem; }
+.help p { margin: 0; }
+footer { margin-top: 2.5rem; color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Get your laptop ready for the IT workshop</h1>
+    <p class="lead">Install the software below before the session so we can spend our time building, not downloading. Setup takes about 30 minutes.</p>
+    <ul class="facts">
+      <li><b>Workshop</b>Intro to Web &amp; Cloud Basics</li>
+      <li><b>Date</b>[Add date and time]</li>
+      <li><b>Location</b>[Add room or link]</li>
+      <li><b>Setup deadline</b>[Add date]</li>
+    </ul>
+  </header>
+
+  <h2>Your computer</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Item</th><th>Minimum</th><th>Recommended</th></tr></thead>
+      <tbody>
+        <tr><td>Operating system</td><td>Windows 10, macOS 12, or Ubuntu 22.04</td><td>Windows 11, macOS 14, or later</td></tr>
+        <tr><td>Memory (RAM)</td><td>8 GB</td><td>16 GB</td></tr>
+        <tr><td>Free disk space</td><td>10 GB</td><td>20 GB</td></tr>
+        <tr><td>Internet</td><td>Wi-Fi that can reach GitHub and npm</td><td>Wired or stable Wi-Fi</td></tr>
+        <tr><td>Permissions</td><td colspan="2">You must be able to install software. Ask your IT team for admin rights if you can't.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Software to install</h2>
+  <div class="progress" aria-live="polite">
+    <div class="bar"><span id="fill"></span></div>
+    <p id="count">0 of 0 steps done</p>
+  </div>
+  <ul class="check" id="list">
+    <li><label><input type="checkbox"><span>Web browser: Chrome or Firefox (latest version)<small>Used to test the pages we build.</small></span></label></li>
+    <li><label><input type="checkbox"><span>Visual Studio Code<small>Our code editor. Download from code.visualstudio.com.</small></span></label></li>
+    <li><label><input type="checkbox"><span>Git<small>Check it works: open a terminal and run <code>git --version</code>.</small></span></label></li>
+    <li><label><input type="checkbox"><span>Node.js 20 LTS<small>Check it works: run <code>node --version</code>.</small></span></label></li>
+    <li><label><input type="checkbox"><span>Python 3.11 or later<small>Check it works: run <code>python --version</code>.</small></span></label></li>
+    <li><label><input type="checkbox"><span>Zoom or Microsoft Teams<small>For online attendees. Test your camera and microphone.</small></span></label></li>
+  </ul>
+
+  <h2>Accounts to create</h2>
+  <ul class="check" id="list2">
+    <li><label><input type="checkbox"><span>GitHub account<small>Free. Use the email you gave when you registered.</small></span></label></li>
+    <li><label><input type="checkbox"><span>Cloud account: [Add provider, e.g. Azure or AWS free tier]<small>You may need a card for verification. Nothing is charged during the workshop.</small></span></label></li>
+  </ul>
+
+  <h2>Need help?</h2>
+  <div class="help">
+    <p>Stuck on a step? Email <a href="mailto:workshop@example.com">workshop@example.com</a> with a screenshot of the error. We answer within one working day, and we hold a setup clinic on [Add date].</p>
+  </div>
+
+  <footer>Last updated [Add date]. Requirements may change, so check this page again the day before the workshop.</footer>
+</main>
+
+<script>
+(function () {
+  var boxes = document.querySelectorAll('.check input');
+  var fill = document.getElementById('fill');
+  var count = document.getElementById('count');
+  function update() {
+    var done = 0;
+    boxes.forEach(function (b) { if (b.checked) done++; });
+    fill.style.width = (boxes.length ? done / boxes.length * 100 : 0) + '%';
+    count.textContent = done + ' of ' + boxes.length + ' steps done' + (done === boxes.length ? '. You’re ready!' : '');
+  }
+  boxes.forEach(function (b) { b.addEventListener('change', update); });
+  update();
+})();
+</script>
+</body>
+</html>
