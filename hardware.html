@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IT Workshop: Hardware Requirements</title>
+<style>
+:root {
+  --bg: #f4f5f2;
+  --surface: #ffffff;
+  --ink: #1b2420;
+  --muted: #5d6b64;
+  --line: #d9dfda;
+  --accent: #0f7a5c;
+  --accent-soft: #e0f3ec;
+  --warn: #8a5a00;
+  --warn-soft: #fff3d6;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101714;
+    --surface: #18211d;
+    --ink: #e5eee9;
+    --muted: #9bada4;
+    --line: #2b3a33;
+    --accent: #4fc9a0;
+    --accent-soft: #163528;
+    --warn: #f0c36a;
+    --warn-soft: #3a2f12;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+}
+main { max-width: 760px; margin: 0 auto; padding: 1.5rem 1.1rem 3rem; }
+h1 { font-size: clamp(1.9rem, 7vw, 2.8rem); line-height: 1.15; margin: 0 0 .6rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.35rem; margin: 2.2rem 0 .8rem; line-height: 1.2; }
+p { margin: 0 0 1rem; max-width: 62ch; }
+.lead { color: var(--muted); font-size: 1.08rem; }
+.table-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: .95rem; }
+th, td { text-align: left; padding: .65rem .8rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: var(--accent-soft); font-weight: 600; }
+tbody th { background: transparent; }
+tr:last-child th, tr:last-child td { border-bottom: 0; }
+.steps { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 1rem 1.1rem 1rem 2.4rem; margin: 0; }
+.steps li { margin-bottom: .5rem; }
+.steps li:last-child { margin-bottom: 0; }
+.check { list-style: none; margin: 0; padding: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; }
+.check li { border-bottom: 1px solid var(--line); }
+.check li:last-child { border-bottom: 0; }
+.check label { display: flex; gap: .75rem; padding: .8rem .9rem; cursor: pointer; align-items: flex-start; }
+.check input { width: 1.25rem; height: 1.25rem; margin-top: .2rem; accent-color: var(--accent); flex: none; }
+.check small { display: block; color: var(--muted); }
+.tag { display: inline-block; font-size: .8rem; padding: .05rem .5rem; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-weight: 600; margin-left: .4rem; }
+.tag.opt { background: var(--line); color: var(--muted); }
+.note { background: var(--warn-soft); color: var(--warn); border-radius: 8px; padding: .9rem 1.1rem; }
+.note p { margin: 0; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+footer { margin-top: 2.5rem; color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Hardware you need for the IT workshop</h1>
+    <p class="lead">Bring a laptop that meets the specs below, plus a few small items. Check your laptop at least a week before the workshop so there is time to borrow one if needed.</p>
+  </header>
+
+  <h2>Laptop specifications</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Component</th><th>Minimum</th><th>Recommended</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Processor</th><td>Dual-core, 2 GHz (Intel i3 or equivalent)</td><td>Quad-core (Intel i5, Ryzen 5, Apple M1 or newer)</td></tr>
+        <tr><th scope="row">Memory (RAM)</th><td>8 GB</td><td>16 GB</td></tr>
+        <tr><th scope="row">Storage</th><td>256 GB, with 10 GB free</td><td>512 GB SSD, with 20 GB free</td></tr>
+        <tr><th scope="row">Screen</th><td>13 inch, 1366 × 768</td><td>14 inch or larger, 1920 × 1080</td></tr>
+        <tr><th scope="row">Battery</th><td>2 hours</td><td>4 hours or more</td></tr>
+        <tr><th scope="row">Wi-Fi</th><td>Wi-Fi 5 (802.11ac)</td><td>Wi-Fi 6 or an Ethernet adapter</td></tr>
+        <tr><th scope="row">Ports</th><td>1 USB port</td><td>2 USB ports and HDMI or USB-C video out</td></tr>
+        <tr><th scope="row">Camera and microphone</th><td>Built in</td><td>Built in, or a USB headset</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>How to check your laptop</h2>
+  <ol class="steps">
+    <li><b>Windows:</b> press the Windows key, type <i>System information</i>, and open it. Look at Processor and Installed RAM.</li>
+    <li><b>Mac:</b> click the Apple menu, then <i>About This Mac</i>. Look at Chip or Processor and Memory.</li>
+    <li><b>Storage:</b> open Settings, then Storage (Windows) or General, then Storage (Mac).</li>
+    <li>Not sure about a result? Send us a screenshot and we will tell you if it works.</li>
+  </ol>
+
+  <h2>What to bring</h2>
+  <ul class="check">
+    <li><label><input type="checkbox"><span>Laptop, fully charged<span class="tag">Required</span></span></label></li>
+    <li><label><input type="checkbox"><span>Laptop charger and power cable<span class="tag">Required</span><small>Seats with power sockets are limited, so charge before you arrive.</small></span></label></li>
+    <li><label><input type="checkbox"><span>Headset or earphones with a microphone<span class="tag">Required</span><small>Online attendees need these. In-room attendees need them for lab videos.</small></span></label></li>
+    <li><label><input type="checkbox"><span>USB flash drive, 8 GB or more<span class="tag opt">Optional</span><small>Handy for sharing files if the network is slow.</small></span></label></li>
+    <li><label><input type="checkbox"><span>External mouse<span class="tag opt">Optional</span></span></label></li>
+    <li><label><input type="checkbox"><span>Ethernet adapter, USB-C or USB-A<span class="tag opt">Optional</span><small>Only if your laptop has no Ethernet port and you prefer a wired connection.</small></span></label></li>
+    <li><label><input type="checkbox"><span>Notebook and pen<span class="tag opt">Optional</span></span></label></li>
+  </ul>
+
+  <h2>Network and room</h2>
+  <div class="table-wrap">
+    <table>
+      <tbody>
+        <tr><th scope="row">Wi-Fi</th><td>[Add network name]. We will hand out the password at the start.</td></tr>
+        <tr><th scope="row">Wired network</th><td>[Add number] Ethernet ports available. First come, first served.</td></tr>
+        <tr><th scope="row">Power</th><td>[Add number] sockets. Bring a power strip if you have one.</td></tr>
+        <tr><th scope="row">Projector</th><td>Provided by the host. HDMI only, so bring an adapter if you plan to present.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Don't have a laptop?</h2>
+  <div class="note">
+    <p>We have [Add number] loan laptops. Request one by [Add date] by emailing <a href="mailto:workshop@example.com">workshop@example.com</a> with your name and the workshop date. Loan laptops are assigned in the order requests arrive.</p>
+  </div>
+
+  <footer>Last updated [Add date]. Questions about hardware? Contact the workshop team.</footer>
+</main>
+</body>
+</html>
